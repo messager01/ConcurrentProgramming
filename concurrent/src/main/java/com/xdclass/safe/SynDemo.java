@@ -2,6 +2,7 @@ package com.xdclass.safe;
 
 public class SynDemo {
 
+
     //修饰方法
     public synchronized void out() throws InterruptedException {
         System.out.println(Thread.currentThread().getName());

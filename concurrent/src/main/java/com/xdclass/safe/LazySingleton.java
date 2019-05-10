@@ -6,6 +6,7 @@ package com.xdclass.safe;
 * 懒汉式单例模式
 * */
 public class LazySingleton {
+
     //构造器私有化
     private LazySingleton(){
 
@@ -44,3 +45,18 @@ public class LazySingleton {
     }
 
 }
+/*
+*
+*      线程安全问题成因：
+*      1.  多线程环境
+*      2.  多个线程操作统一共享资源
+*      3.  对该共享资源进行了非原子性的操作
+*
+*      如何解决？
+*         打破成因中三点的任意一点即可
+*         1.  将多线程 改变为单线程   （必要的代码加锁 ）
+*         2.  多线程不操作同一共享的资源  （ThreadLocal  、 不共享、 共享资源不可变  用final修饰）
+*         3.  对该共享的资源进行原子性的操作( 加锁  使用JDK自带的原子性操作的类、JUC提供的并发工具)
+*
+*
+* */
